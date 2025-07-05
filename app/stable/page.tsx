@@ -9,6 +9,7 @@ import { GlobeDisplay } from "@/components/globe-display"
 import { ChevronDown, Info, ArrowRight, Loader } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 import ConnectButton from "@/components/ConnectButton"
 
 // Define a type for our transactions
@@ -70,7 +71,16 @@ export default function StableDashboardPage() {
     >
       <div className="relative z-10 mx-auto w-full max-w-[1000px]">
         <header className="flex items-center justify-between">
-          <h1 className="font-serif text-2xl text-gray-800 sm:text-3xl">StableRoute</h1>
+          <h1 className="font-serif text-2xl text-gray-800 sm:text-3xl">
+            <Image
+              src="/stableroute-black.png"
+              alt="StableRoute Logo"
+              width={198}
+              height={32}
+              className="inline-block"
+              priority
+            />
+          </h1>
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center justify-center gap-1 rounded-[28px] border border-white bg-white/50 pl-4 pr-3 py-2 backdrop-blur-[2px]">
               <span><ConnectButton /></span>

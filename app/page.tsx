@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react";
 
 export default function StableRoutePage() {
+  const [selected, setSelected] = useState("Sender"); // o "Receiver"
+  const href = selected === "Sender" ? "/stable" : "/receiver";
+
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-yellow-50 via-lime-50 to-cyan-100">
       <div
@@ -35,18 +39,20 @@ export default function StableRoutePage() {
         >
           <ToggleGroupItem
             value="sender"
-            className="flex flex-[1_0_0] items-center justify-center gap-[10px] rounded-[26px] border border-white bg-white/75 p-3 data-[state=off]:border-transparent data-[state=off]:bg-transparent"
+            className="flex h-100 flex-[1_0_0] items-center justify-center gap-[10px] rounded-[26px] border border-white bg-white/75 p-3 data-[state=off]:border-transparent data-[state=off]:bg-transparent"
+            onClick={() => setSelected("Sender")}
           >
             Sender
           </ToggleGroupItem>
           <ToggleGroupItem
             value="receiver"
-            className="flex flex-[1_0_0] items-center justify-center gap-[10px] rounded-[26px] border border-white bg-white/75 p-3 data-[state=off]:border-transparent data-[state=off]:bg-transparent"
+            className="flex h-100 flex-[1_0_0] items-center justify-center gap-[10px] rounded-[26px] border border-white bg-white/75 p-3 data-[state=off]:border-transparent data-[state=off]:bg-transparent"
+            onClick={() => setSelected("Receiver")}
           >
             Receiver
           </ToggleGroupItem>
         </ToggleGroup>
-        <Link href="/stable">
+        <Link href={href}>
           <Button
             className="flex h-[56px] w-[300px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4 active:bg-[#0042C6] hover:bg-[#4986FF]"
           >

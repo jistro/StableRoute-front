@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { GlobeDisplay } from "@/components/globe-display"
 import { ChevronDown, Info, ArrowRight, Loader } from "lucide-react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 
@@ -49,8 +50,8 @@ const transactionsData: Transaction[] = [
   {
     id: 3,
     status: "completed",
-    amount: "500 USDC",
-    recipient: "antoni.plproject.eth",
+    amount: "4500 USDC",
+    recipient: "jj.jjmiranda.eth",
     flag: "🇵🇱",
     date: "Sent Jul 1 2025.",
     receivedDate: "Received Jul 4 2025.",
@@ -59,8 +60,8 @@ const transactionsData: Transaction[] = [
   {
     id: 4,
     status: "completed",
-    amount: "500 USDC",
-    recipient: "louis.lvproject.eth",
+    amount: "1500 USDC",
+    recipient: "manati.jjmiranda.eth",
     flag: "🇫🇷",
     date: "Jul 4 2025",
     path: ["usa_east", "france"],
@@ -79,7 +80,16 @@ export default function StableDashboardPage() {
     >
       <div className="relative z-10 mx-auto w-full max-w-[1000px]">
         <header className="flex items-center justify-between">
-          <h1 className="font-serif text-2xl text-gray-800 sm:text-3xl">StableRoute</h1>
+          <h1 className="font-serif text-2xl text-gray-800 sm:text-3xl">
+             <Image
+                src="/stableroute-black.png"
+                alt="StableRoute Logo"
+                width={198}
+                height={32}
+                className="inline-block"
+                priority
+              />
+          </h1>
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center justify-center gap-1 rounded-[28px] border border-white bg-white/50 pl-6 pr-4 py-4 backdrop-blur-[2px]">
               <span>mateo.company.eth</span>
