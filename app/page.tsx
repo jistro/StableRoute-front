@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function StableRoutePage() {
   return (
@@ -18,7 +19,14 @@ export default function StableRoutePage() {
       />
       <div className="relative z-10 flex flex-col items-center space-y-8">
         <h1 className="text-[#17181A] text-center font-['PT_Serif'] text-[48px] font-normal leading-[150%] tracking-[-1.44px]">
-          StableRoute
+          <Image
+            src="/stableroute-black.png"
+            alt="StableRoute Logo"
+            width={340}
+            height={55}
+            className="inline-block"
+            priority
+          />
         </h1>
         <ToggleGroup 
           type="single" 

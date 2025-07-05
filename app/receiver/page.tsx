@@ -114,12 +114,10 @@ export default function StableDashboardPage() {
                     <Card
                       key={tx.id}
                       className= { tx.status === "pending" ?
-                            "flex h-[104px] items-center gap-4 rounded-[28px] border-2 border-[#0055FF] bg-white/50 p-6"
+                            "flex h-[240px] items-center gap-4 rounded-[28px] border-2 border-[#0055FF] bg-white/50 p-6"
                           : "flex h-[104px] items-center gap-4 rounded-[28px] border border-white bg-white/50 p-6"
                        }
-                       
-                      
-                      onClick={() => setActiveTransaction(tx.id === activeTransaction?.id ? null : tx)}
+                      /* onClick={() => setActiveTransaction(tx.id === activeTransaction?.id ? null : tx)} */
                     >
                       <div className="flex items-center gap-4">
                         <div className="flex h-14 w-14 items-center justify-center gap-2.5 rounded-[28px] border border-[rgba(23,24,26,0.10)] bg-white">
@@ -134,12 +132,23 @@ export default function StableDashboardPage() {
                             {tx.date} {tx.receivedDate}
                           </p>
                           {activeTransaction?.id === tx.id && tx.status === "pending" && tx.remaining && (
-                            <div className="mt-1 flex items-center gap-2">
-                              <p className="text-sm font-medium text-gray-600">{tx.remaining}</p>
-                              <Progress
-                                value={tx.progress}
-                                className="h-2 flex-1 [&>*]:bg-gradient-to-r [&>*]:from-blue-500 [&>*]:to-purple-500"
-                              />
+                            <div className="mt-2 flex-colum items-center gap-2">
+                              <div className="mt-1 flex items-center gap-2">
+                                <p className="text-sm font-medium text-gray-600">{tx.remaining}</p>
+                                <Progress
+                                  value={tx.progress}
+                                  className="h-2 flex-1 [&>*]:bg-gradient-to-r [&>*]:from-blue-500 [&>*]:to-purple-500"
+                                />
+                              </div>
+                              <div className="mt-1 flex-colum items-center gap-2">
+                                <Button 
+                                    className="flex w-full h-[56px] items-center justify-center gap-[10px] rounded-[28px] border-[#0055FF] bg-[#0055FF] px-6 py-4 transition-colors hover:border-[#0055FF] hover:bg-[#4986FF] active:bg-[#0042C6]">
+                                    <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
+                                      Receive with Self
+                                    </span>
+                                </Button>
+                                <p className="text-center text-sm text-gray-600">Scan your NFC-enabled Passport or EU-issued IDs</p>
+                              </div>
                             </div>
                           )}
                         </div>
