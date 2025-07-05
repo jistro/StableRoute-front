@@ -9,6 +9,7 @@ import { GlobeDisplay } from "@/components/globe-display"
 import { ChevronDown, Info, ArrowRight, Loader } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import ConnectButton from "@/components/ConnectButton"
 
 // Define a type for our transactions
 type Transaction = {
@@ -72,8 +73,7 @@ export default function StableDashboardPage() {
           <h1 className="font-serif text-2xl text-gray-800 sm:text-3xl">StableRoute</h1>
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center justify-center gap-1 rounded-[28px] border border-white bg-white/50 pl-6 pr-4 py-4 backdrop-blur-[2px]">
-              <span>mateo.company.eth</span>
-              <ChevronDown className="h-4 w-4" />
+              <span><ConnectButton /></span>
             </div>
           </div>
         </header>
