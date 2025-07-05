@@ -105,12 +105,15 @@ export default function PaymentPage() {
         </div>
 
         {/* Send Button */}
-        <Button 
+        <Button
+          asChild
           className="flex h-[56px] items-center justify-center gap-[10px] rounded-[28px] border border-[#0055FF] bg-[#0055FF] px-6 py-4 transition-colors hover:border-[#0055FF] hover:bg-[#4986FF] active:bg-[#0042C6]"
         >
-          <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
-            Send
-          </span>
+          <Link href="/stable">
+            <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
+              Send
+            </span>
+          </Link>
         </Button>
       </div>
     </div>

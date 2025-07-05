@@ -50,6 +50,16 @@ const transactionsData: Transaction[] = [
     id: 3,
     status: "completed",
     amount: "500 USDC",
+    recipient: "antoni.plproject.eth",
+    flag: "🇵🇱",
+    date: "Sent Jul 1 2025.",
+    receivedDate: "Received Jul 4 2025.",
+    path: ["usa_east", "poland"],
+  },
+  {
+    id: 4,
+    status: "completed",
+    amount: "500 USDC",
     recipient: "louis.lvproject.eth",
     flag: "🇫🇷",
     date: "Jul 4 2025",
@@ -85,23 +95,13 @@ export default function StableDashboardPage() {
                 <CardContent className="flex flex-col items-start gap-6 p-6 self-stretch">
                   <div className="flex items-center justify-between w-full">
                     <span className="text-2xl font-serif">Your Cash</span>
-                    <span className="text-3xl font-serif">500.00 USD</span>
+                    <span className="text-3xl font-serif">150.00 USD</span>
                   </div>
                   <div className="flex gap-2 w-full">
                     <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">300 USDC <span className='ml-1'>🪙</span></span>
                     <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">100 USDC <span className='ml-1'>🟣</span></span>
                     <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">100 USDC <span className='ml-1'>🔵</span></span>
                   </div>
-                  <Button
-                    asChild
-                    className="flex h-[56px] w-[432px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4 hover:bg-[#4986FF] active:bg-[#0042C6]"
-                  >
-                    <Link href="/payment">
-                      <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
-                        Make a Payment
-                      </span>
-                    </Link>
-                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -113,7 +113,12 @@ export default function StableDashboardPage() {
                   {transactionsData.map((tx) => (
                     <Card
                       key={tx.id}
-                      className="flex h-[104px] items-center gap-4 rounded-[28px] border border-white bg-white/50 p-6"
+                      className= { tx.status === "pending" ?
+                            "flex h-[104px] items-center gap-4 rounded-[28px] border-2 border-[#0055FF] bg-white/50 p-6"
+                          : "flex h-[104px] items-center gap-4 rounded-[28px] border border-white bg-white/50 p-6"
+                       }
+                       
+                      
                       onClick={() => setActiveTransaction(tx.id === activeTransaction?.id ? null : tx)}
                     >
                       <div className="flex items-center gap-4">
@@ -122,7 +127,7 @@ export default function StableDashboardPage() {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 font-medium text-gray-800">
-                            {tx.amount} <UsdcIcon className="h-5 w-5" /> <ArrowRight className="h-4 w-4 text-gray-400" />{" "}
+                            {tx.status === "pending"? "Receiving":"Received"} {tx.amount} <UsdcIcon className="h-5 w-5" /> <ArrowRight className="h-4 w-4 text-gray-400" />{" "}
                             {tx.recipient} {tx.flag}
                           </div>
                           <p className="text-sm text-gray-500">
