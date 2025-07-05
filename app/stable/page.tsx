@@ -94,7 +94,7 @@ export default function StableDashboardPage() {
                   </div>
                   <Button
                     asChild
-                    className="flex h-[56px] w-[432px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4 hover:bg-[#4986FF]"
+                    className="flex h-[56px] w-[432px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4 hover:bg-[#4986FF] active:bg-[#0042C6]"
                   >
                     <Link href="/payment">
                       <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">

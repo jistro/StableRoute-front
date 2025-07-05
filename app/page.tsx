@@ -40,7 +40,7 @@ export default function StableRoutePage() {
         </ToggleGroup>
         <Link href="/stable">
           <Button
-            className="flex h-[56px] w-[300px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4"
+            className="flex h-[56px] w-[300px] items-center justify-center gap-[10px] rounded-[28px] border border-[#002B80] bg-[#0055FF] px-6 py-4 active:bg-[#0042C6] hover:bg-[#4986FF]"
           >
             <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
               Connect Wallet
