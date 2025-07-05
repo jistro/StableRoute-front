@@ -30,7 +30,7 @@ const transactionsData: Transaction[] = [
     id: 1,
     status: "pending",
     amount: "500 USDC",
-    recipient: "antoni.plproject.eth",
+    recipient: "anto...",
     flag: "🇵🇱",
     date: "Sent Jul 3 2025.",
     remaining: "Remain 4d 17h 34m",
@@ -124,8 +124,8 @@ export default function StableDashboardPage() {
                     <Card
                       key={tx.id}
                       className= { tx.status === "pending" ?
-                            "flex h-[240px] items-center gap-4 rounded-[28px] border-2 border-[#0055FF] bg-white/50 p-6"
-                          : "flex h-[104px] items-center gap-4 rounded-[28px] border border-white bg-white/50 p-6"
+                            "flex h-[200px] items-center rounded-[28px] border-2 border-[#0055FF] bg-white/50 p-4"
+                          : "flex h-[104px] items-center rounded-[28px] border border-white bg-white/50 p-4"
                        }
                       /* onClick={() => setActiveTransaction(tx.id === activeTransaction?.id ? null : tx)} */
                     >
@@ -137,6 +137,9 @@ export default function StableDashboardPage() {
                           <div className="flex items-center gap-2 font-medium text-gray-800">
                             {tx.status === "pending"? "Receiving":"Received"} {tx.amount} <UsdcIcon className="h-5 w-5" /> <ArrowRight className="h-4 w-4 text-gray-400" />{" "}
                             {tx.recipient} {tx.flag}
+                            <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full text-gray-400">
+                              <Info className="h-5 w-5" />
+                            </Button>
                           </div>
                           <p className="text-sm text-gray-500">
                             {tx.date} {tx.receivedDate}
@@ -162,9 +165,6 @@ export default function StableDashboardPage() {
                             </div>
                           )}
                         </div>
-                        <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full text-gray-400">
-                          <Info className="h-5 w-5" />
-                        </Button>
                       </div>
                     </Card>
                   ))}
