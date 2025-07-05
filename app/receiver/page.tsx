@@ -30,7 +30,7 @@ const transactionsData: Transaction[] = [
     id: 1,
     status: "pending",
     amount: "500 USDC",
-    recipient: "anto...",
+    recipient: "antoni.et...",
     flag: "🇵🇱",
     date: "Sent Jul 3 2025.",
     remaining: "Remain 4d 17h 34m",
@@ -41,7 +41,7 @@ const transactionsData: Transaction[] = [
     id: 2,
     status: "completed",
     amount: "500 USDC",
-    recipient: "antoni.plproject.eth",
+    recipient: "antoni.plp...",
     flag: "🇵🇱",
     date: "Sent Jul 1 2025.",
     receivedDate: "Received Jul 4 2025.",
@@ -51,7 +51,7 @@ const transactionsData: Transaction[] = [
     id: 3,
     status: "completed",
     amount: "4500 USDC",
-    recipient: "jj.jjmiranda.eth",
+    recipient: "jj.jjmiran...",
     flag: "🇵🇱",
     date: "Sent Jul 1 2025.",
     receivedDate: "Received Jul 4 2025.",
@@ -61,9 +61,10 @@ const transactionsData: Transaction[] = [
     id: 4,
     status: "completed",
     amount: "1500 USDC",
-    recipient: "manati.jjmiranda.eth",
+    recipient: "jj.jjmiran...",
     flag: "🇫🇷",
-    date: "Jul 4 2025",
+    date: "Sent Jul 4 2025.",
+    receivedDate: "Received Jul 4 2025.",
     path: ["usa_east", "france"],
   },
 ]
@@ -134,7 +135,7 @@ export default function StableDashboardPage() {
                           <ArrowRight className="h-6 w-6 text-gray-600" />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-2 font-medium text-gray-800">
+                          <div className="flex flex-row items-center gap-2 font-medium text-gray-800">
                             {tx.status === "pending"? "Receiving":"Received"} {tx.amount} <UsdcIcon className="h-5 w-5" /> <ArrowRight className="h-4 w-4 text-gray-400" />{" "}
                             {tx.recipient} {tx.flag}
                             <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full text-gray-400">
@@ -153,9 +154,9 @@ export default function StableDashboardPage() {
                                   className="h-2 flex-1 [&>*]:bg-gradient-to-r [&>*]:from-blue-500 [&>*]:to-purple-500"
                                 />
                               </div>
-                              <div className="mt-1 flex-colum items-center gap-2">
+                              <div className="mt-1 flex-colum items-center">
                                 <Button 
-                                    className="flex w-full h-[56px] items-center justify-center gap-[10px] rounded-[28px] border-[#0055FF] bg-[#0055FF] px-6 py-4 transition-colors hover:border-[#0055FF] hover:bg-[#4986FF] active:bg-[#0042C6]">
+                                    className="flex w-full h-[56px] items-center justify-center rounded-[28px] border-[#0055FF] bg-[#0055FF] transition-colors hover:border-[#0055FF] hover:bg-[#4986FF] active:bg-[#0042C6]">
                                     <span className="flex-[1_0_0] text-center font-['Inter'] text-base font-normal leading-[150%] text-white">
                                       Receive with Self
                                     </span>
