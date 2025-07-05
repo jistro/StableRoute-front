@@ -1,0 +1,115 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_usdc", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_tokenMessenger",
+        "type": "address"
+      },
+      { "internalType": "address", "name": "_sudoAccount", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_voucherAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  { "inputs": [], "name": "InsufficientUSDCBalance", "type": "error" },
+  { "inputs": [], "name": "NotAnAdmin", "type": "error" },
+  { "inputs": [], "name": "NotTheSudoAccount", "type": "error" },
+  { "inputs": [], "name": "NotYetTimeToAcceptProposal", "type": "error" },
+  {
+    "inputs": [],
+    "name": "acceptSudoAccountProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newMessenger", "type": "address" }
+    ],
+    "name": "changeTokenMessenger",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newUsdc", "type": "address" }
+    ],
+    "name": "changeUsdcAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newVoucherAddress",
+        "type": "address"
+      }
+    ],
+    "name": "changeVoucherAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSudoInfo",
+    "outputs": [
+      { "internalType": "address", "name": "actual", "type": "address" },
+      { "internalType": "address", "name": "proposal", "type": "address" },
+      { "internalType": "uint256", "name": "timeToAccept", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getUSDCAmount",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newSudoAccount", "type": "address" }
+    ],
+    "name": "makeSudoAccountProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "rejectSudoAccountProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+    ],
+    "name": "sendToVoucher",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "recipient", "type": "address" },
+      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
