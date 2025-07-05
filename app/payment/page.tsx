@@ -14,8 +14,8 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { config } from "@/config";
-import ethereumAddresses from "@/variables/ethereumAddresses.json";
-import VaucherABI from "@/variables/VoucherABI.json";
+import ethereumAddresses from "@/variables/addresses.json";
+import Vaucher from "@/variables/abi/Voucher.json";
 import { writeContract } from "wagmi/actions";
 
 
@@ -40,7 +40,7 @@ export default function PaymentPage() {
     console.log("Amount Tokens (parsed):", parsedAmountTokens);
     
     writeContract(config, {
-      abi: VaucherABI,
+      abi: Vaucher,
       address: ethereumAddresses.voucher as `0x${string}`,
       functionName: "prepareVoucher",
       args: [fullName, nationality, addressRecipient, parsedAmountTokens],
