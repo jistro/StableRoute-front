@@ -84,7 +84,6 @@ export default function StableDashboardPage() {
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center justify-center gap-1 rounded-[28px] border border-white bg-white/50 pl-4 pr-3 py-2 backdrop-blur-[2px]">
               <span><ConnectButton /></span>
-              {/* name.company.eth */}
             </div>
           </div>
         </header>
@@ -138,6 +137,7 @@ export default function StableDashboardPage() {
               </Card>
             </div>
 
+            {/*
             <div className="space-y-4">
               <div className="flex flex-col gap-6">
                 <h2 className="text-[#17181A] font-['PT_Serif'] text-2xl font-normal leading-[150%]">Transaction History</h2>
@@ -179,6 +179,7 @@ export default function StableDashboardPage() {
                 </div>
               </div>
             </div>
+            */}
           </div>
           <div className="sticky top-8 hidden lg:block">
             <GlobeDisplay activePath={activeTransaction?.path} />
