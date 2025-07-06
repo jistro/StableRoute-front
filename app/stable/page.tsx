@@ -84,6 +84,7 @@ export default function StableDashboardPage() {
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center justify-center gap-1 rounded-[28px] border border-white bg-white/50 pl-4 pr-3 py-2 backdrop-blur-[2px]">
               <span><ConnectButton /></span>
+              {/* name.company.eth */}
             </div>
           </div>
         </header>

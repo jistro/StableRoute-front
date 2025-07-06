@@ -14,10 +14,9 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { config } from "@/config";
-import ethereumAddresses from "@/variables/addresses.json";
-import Vaucher from "@/variables/abi/Voucher.json";
+import Addresses from "@/variables/addresses.json";
+import Voucher from "@/variables/abi/Voucher.json";
 import { writeContract } from "wagmi/actions";
-
 
 export default function PaymentPage() {
    const [country, setCountry] = React.useState<string | null>(null);
@@ -28,7 +27,7 @@ export default function PaymentPage() {
     const fullName = (document.getElementById("payment_fullNameInput") as HTMLInputElement)
       .value;
     const nationality = country;
-    const addressRecipient = (document.getElementById("payment_paymentENSInput") as HTMLInputElement)
+    const addressRecipient = (document.getElementById("payment_paymentAddress") as HTMLInputElement)
       .value;
     const amountTokens = (document.getElementById("payment_amountInput") as HTMLInputElement)
       .value;
@@ -40,8 +39,8 @@ export default function PaymentPage() {
     console.log("Amount Tokens (parsed):", parsedAmountTokens);
     
     writeContract(config, {
-      abi: Vaucher,
-      address: ethereumAddresses.voucher as `0x${string}`,
+      abi: Voucher,
+      address: Addresses.voucher as `0x${string}`,
       functionName: "prepareVoucher",
       args: [fullName, nationality, addressRecipient, parsedAmountTokens],
     })
@@ -92,7 +91,7 @@ export default function PaymentPage() {
           </h2>
           <Input
             placeholder="Enter receiver's company ENS"
-            id="payment_paymentENSInput"
+            id="payment_paymentAddress"
             className="h-[56px] rounded-[28px] border border-[#17181A1A] bg-white px-6"
           />
 
