@@ -166,6 +166,7 @@ export default function StableDashboardPage() {
                     <span className="text-2xl font-serif">Your Cash</span>
                     <span className="text-3xl font-serif">150.00 USD</span>
                   </div>
+<<<<<<< HEAD
                   <div className="flex gap-2 w-full">
                     <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">
                       300 USDC <span className="ml-1">🪙</span>
@@ -175,6 +176,32 @@ export default function StableDashboardPage() {
                     </span>
                     <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">
                       100 USDC <span className="ml-1">🔵</span>
+=======
+                  <div className="flex gap-2 w-full justify-end">
+                    <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">100 USDC
+                      <span className='ml-1'>
+                        <Image
+                          src="/icons/ic-chain-arb.png"
+                          alt="arbitrum icon"
+                          width={16}
+                          height={16}
+                          className="inline-block"
+                          priority
+                        />
+                      </span>
+                    </span>
+                    <span className="inline-flex items-center justify-end gap-1 pl-2 pr-1.5 rounded-xl bg-[rgba(23,24,26,0.05)]">50 USDC
+                      <span className='ml-1'>
+                        <Image
+                          src="/icons/ic-chain-base.png"
+                          alt="arbitrum icon"
+                          width={16}
+                          height={16}
+                          className="inline-block"
+                          priority
+                        />
+                      </span>
+>>>>>>> 38464ee1f433f6330c1f30127b774d46a9a90837
                     </span>
                   </div>
                 </CardContent>
